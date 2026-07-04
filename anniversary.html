@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 2 Months ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: linear-gradient(135deg, #ffd6e8, #fff1f7);
+      color: #4a1f2b;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 80px 20px 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    button {
+      background: #ff6fae;
+      color: white;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #ff4f9c;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .photos img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff4f9c;
+      animation: fall linear forwards;
+      font-size: 20px;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      padding: 40px 20px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Happy 2 Months, Babe ❤️</h1>
+    <p class="subtitle">Two months of us, and I’m still so happy it’s you.</p>
+    <button onclick="showMessage()">Click for a surprise</button>
+  </header>
+
+  <section id="surprise" class="card hidden">
+    <h2>My little message to you</h2>
+    <p>
+      I’m really grateful for these past two months with you. 
+      Even with distance, stress, and life being life, you still mean so much to me.
+      I love getting to know you more, laughing with you, and having you as my person.
+    </p>
+    <p>
+      I hope this is only the beginning of many more months together.
+    </p>
+    <p><strong>I LIKE you ❤️</strong></p>
+  </section>
+
+  <section class="card">
+    <h2>Things I LIKE about you</h2>
+    <p>❤️ Your laugh</p>
+    <p>❤️ The way you make me feel close to you</p>
+    <p>❤️ Our FaceTimes</p>
+    <p>❤️ How cute you are</p>
+    <p>❤️ That you’re mine</p>
+  </section>
+
+  <section class="card">
+    <h2>Our little memories</h2>
+    <p>Replace these with your own photos:</p>
+
+    <div class="photos">
+      <img src="photo1.jpg" alt="Memory 1">
+      <img src="photo2.jpg" alt="Memory 2">
+      <img src="photo3.jpg" alt="Memory 3">
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>A question for you...</h2>
+    <p>Will you keep being my favorite person for month 3 too?</p>
+    <button onclick="alert('Correct answer. I knew it ❤️')">Yes</button>
+  </section>
+
+  <footer>
+    Made with love by Nathan 💌
+  </footer>
+
+  <script>
+    function showMessage() {
+      document.getElementById("surprise").classList.remove("hidden");
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
